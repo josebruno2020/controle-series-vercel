@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateTemporadasTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('temporadas', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('numero');
+            $table->integer('serie_id')->unsigned();
+            //Afirmando o relacionamento que existe entre as tabelas de serie e temporada;
+            $table->foreign('serie_id')->references('id')->on('series');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('temporadas');
+    }
+}
