@@ -1,0 +1,14 @@
+-> Depois de rodar o comando composer install, 
+
+Isso no .env
+-> php artisan key:generate (gerar uma nova chave que mantém toda a aplicação segura);
+
+-> alterar APP_ENV = prod
+
+-> APP_DEBUG = false
+
+-> Alterar os dados de conexão com o banco de dados (possivelmente nao será o sqlite);
+
+-> Rodar as migrations para criar todo o necessário no banco;
+
+https://laravel.com/docs/5.8/deployment
